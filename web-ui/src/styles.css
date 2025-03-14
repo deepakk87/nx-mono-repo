@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+.header {
+    background-color: bisque;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: large;
+}
+
+.body {
+    font-size:medium;
+}
