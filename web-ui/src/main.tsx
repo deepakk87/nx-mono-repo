@@ -1,54 +1,56 @@
-import {deact} from '@deepakk87/deact';
-import React from 'react';
-import {createRoot} from 'react-dom/client';
+import {deact, Deact} from '@deepakk87/deact';
 
 /* React application is a tree of react elements 
    React Element follows a tree structure 
     - type, props and list of children 
 */ 
 
-const rootElement = React.createElement('div', {className: 'header'}, 
-  React.createElement('div', {className: 'title'}, "Deact Library"), 
-  React.createElement('div', {className: 'body'}, "An attempt at build a react clone"));
+const rootElement = Deact.createElement('div', {className: 'header'}, 
+  Deact.createElement('div', {className: 'title'}, "Deact Library"), 
+  Deact.createElement('div', {className: 'body'}, "An attempt at build a react clone"));
 
 console.log(rootElement);
 
 /**
- * Print the following output on console.
- * {
+ {
     "type": "div",
-    "key": null,
     "props": {
         "className": "header",
         "children": [
             {
                 "type": "div",
-                "key": null,
                 "props": {
                     "className": "title",
-                    "children": "Deact Library"
-                },
-                "_owner": null,
-                "_store": {}
+                    "children": [
+                        {
+                            "type": "TEXT_ELEMENT",
+                            "props": {
+                                "nodeValue": "Deact Library",
+                                "children": []
+                            }
+                        }
+                    ]
+                }
             },
             {
                 "type": "div",
-                "key": null,
                 "props": {
                     "className": "body",
-                    "children": "An attempt at build a react clone"
-                },
-                "_owner": null,
-                "_store": {}
+                    "children": [
+                        {
+                            "type": "TEXT_ELEMENT",
+                            "props": {
+                                "nodeValue": "An attempt at build a react clone",
+                                "children": []
+                            }
+                        }
+                    ]
+                }
             }
         ]
-    },
-    "_owner": null,
-    "_store": {}
-}
+    }
+} 
 */
 
-const domNode = document.getElementById('root') as HTMLElement;
-const root = createRoot(domNode);
-root.render(rootElement);
+Deact.render(rootElement, document.getElementById('root') as HTMLElement);
 console.log (deact());

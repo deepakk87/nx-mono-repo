@@ -21,4 +21,5 @@ Create react application `web-ui` where we will be testing changes.
 Render the browser and see the logs in browser console.
 Setup is complete.
 
- 
+Step 2: -
+Created Deact.createElement and render function and produced the same output as react app.
